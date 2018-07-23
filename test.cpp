@@ -14,9 +14,28 @@ public:
     }
 };
 
+void Function()
+{
+    cout << "Call Function!\n" << endl;
+}
 
 int main()
 {
+    void (*p)();
+    cout << p << endl;
+    cout << &p << endl;
+    cout << *p << endl;
+    // *&p = Function;
+    p = &Function;
+    cout << &Function << endl;
+    cout << Function << endl;
+    cout << p << endl;
+    cout << *&p << endl;
+    *(int*)&p=(int)Function;
+    (*p)();
+
+    // return 0;
+
     A::Instance()->haha();
     A* a = new A;
     // A a;
